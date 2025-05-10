@@ -11,7 +11,7 @@
   style="--bg:#f8f5d7"
   lang="ja-jp"
   dir="ltr"
-><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+><head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -116,14 +116,14 @@ systemctl daemon-reload: ユニット設定ファイルの再読み込み
 systemdのログ
 systemdによって起動させられたUnitのログは/var/log/journal以下に
 バイナリ形式で保存される。" />
-  <meta name="author" content="Kohei Morita" /><link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+  <meta name="author" content="Kohei Morita" /><link rel="preload stylesheet" as="style" href="https://moriT958.github.io/myblog/main.min.css" />
 
   
-  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+  <link rel="preload" as="image" href="https://moriT958.github.io/myblog/theme.png" />
 
   <link rel="preload" as="image" href="https://pbs.twimg.com/profile_images/1815956684168441856/xfRCsBBh_400x400.jpg" />
 
-  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" /><link rel="preload" as="image" href="http://localhost:1313/github.svg" /><link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  <link rel="preload" as="image" href="https://moriT958.github.io/myblog/twitter.svg" /><link rel="preload" as="image" href="https://moriT958.github.io/myblog/github.svg" /><link rel="preload" as="image" href="https://moriT958.github.io/myblog/rss.svg" />
 
   <link
   rel="stylesheet"
@@ -161,14 +161,60 @@ systemdによって起動させられたUnitのログは/var/log/journal以下�
   
   <link
     rel="icon"
-    href="http://localhost:1313/favicon.ico"
+    href="https://moriT958.github.io/myblog/favicon.ico"
   />
   <link
     rel="apple-touch-icon"
-    href="http://localhost:1313/apple-touch-icon.png"
+    href="https://moriT958.github.io/myblog/apple-touch-icon.png"
   />
 
   <meta name="generator" content="Hugo 0.147.2">
+  <meta itemprop="name" content="Linux学習記録">
+  <meta itemprop="description" content="ディレクトリ構造 /: ルートディレクトリの事で、システムの最上位のディレクトリ。 ~: ホームディレクトリのことで、ログインしたユーザのトップディレクトリ。 /etc: 設定ファイル系が格納される /var: システムなどのログや生成データが格納される Mac(unix) uuidgen: UUIDを生成できる pbcopy/pbpaste: クリップボードに保存・貼り付けができる。echo &#34;Hello,World.&#34; | pbcopy systemd systemd概要 Linuxにおいて起動処理やシステム全体の管理を行うデーモンプロセス。
+カーネルが生成する最初のユーザプロセス
+PID=1が割り当てられる systemd起動の流れ
+BIOS/UEFI -&gt; ブートローダ -&gt; カーネル -&gt; init/systemd GRUB2によってHDDからメモリへカーネルがロードされる カーネルはH/Wを認識できるようになった後systemdを起動する systemdはUnitという単位でシステム起動処理を行う
+従来(init/upstart)との違い
+init/upstartでは、シェルスクリプトによって起動プロセスが順番に実行されていた /etc/rc.d配下のスクリプトが実施 systemdの場合、スクリプト方式は廃止。 これまでのスクリプトの仕事は全てUnitとして定義された systemdはUnitを直接起動させる init/upstartと違い、順番ではなく並列的に実行されるようになった Unitの特徴
+スクリプトではなく設定ファイルに記述 Unit間の依存・順序関係(並列処理)の定義 Unitは役割によっていくつかの種類がある target, mount, service, device, socketなど systemd起動時、default.targetというUnitを頂点として、依存関係のツリーが構築される Unitの定義ファイルの場所
+/usr/lib/systemd/system/: システムのデフォルトのUnit設定ファイル /etc/systemd/system: ユーザ独自のUnit設定ファイル。優先はこっち systemctlコマンド一覧 systemdを操作するためのクライアント。
+systemctl start &lt;Unit&gt;: ユニット起動 systemctl stop &lt;Unit&gt;: ユニット停止 systemctl restart &lt;Unit&gt;: ユニット再起動 systemctl reload &lt;Unit&gt;: ユニット systemctl status &lt;Unit&gt;: ユニットの状態確認 systemctl enable &lt;Unit&gt;: 自動起動の有効化 systemctl disable &lt;Unit&gt;: 自動起動の無効化 systemctl is-enabled &lt;Unit&gt;: 自動起動設定の確認 systemctl list-unit-files --type=&lt;type&gt;: ユニット一覧の表示 systemctl daemon-reload: ユニット設定ファイルの再読み込み systemdのログ systemdによって起動させられたUnitのログは/var/log/journal以下に バイナリ形式で保存される。">
+  <meta itemprop="datePublished" content="2025-05-10T12:57:03+09:00">
+  <meta itemprop="dateModified" content="2025-05-10T12:57:03+09:00">
+  <meta itemprop="wordCount" content="104">
+  <meta itemprop="keywords" content="Linux,Server"><meta property="og:url" content="https://moriT958.github.io/myblog/posts/linux/">
+  <meta property="og:site_name" content="morita&#39;s blog">
+  <meta property="og:title" content="Linux学習記録">
+  <meta property="og:description" content="ディレクトリ構造 /: ルートディレクトリの事で、システムの最上位のディレクトリ。 ~: ホームディレクトリのことで、ログインしたユーザのトップディレクトリ。 /etc: 設定ファイル系が格納される /var: システムなどのログや生成データが格納される Mac(unix) uuidgen: UUIDを生成できる pbcopy/pbpaste: クリップボードに保存・貼り付けができる。echo &#34;Hello,World.&#34; | pbcopy systemd systemd概要 Linuxにおいて起動処理やシステム全体の管理を行うデーモンプロセス。
+カーネルが生成する最初のユーザプロセス
+PID=1が割り当てられる systemd起動の流れ
+BIOS/UEFI -&gt; ブートローダ -&gt; カーネル -&gt; init/systemd GRUB2によってHDDからメモリへカーネルがロードされる カーネルはH/Wを認識できるようになった後systemdを起動する systemdはUnitという単位でシステム起動処理を行う
+従来(init/upstart)との違い
+init/upstartでは、シェルスクリプトによって起動プロセスが順番に実行されていた /etc/rc.d配下のスクリプトが実施 systemdの場合、スクリプト方式は廃止。 これまでのスクリプトの仕事は全てUnitとして定義された systemdはUnitを直接起動させる init/upstartと違い、順番ではなく並列的に実行されるようになった Unitの特徴
+スクリプトではなく設定ファイルに記述 Unit間の依存・順序関係(並列処理)の定義 Unitは役割によっていくつかの種類がある target, mount, service, device, socketなど systemd起動時、default.targetというUnitを頂点として、依存関係のツリーが構築される Unitの定義ファイルの場所
+/usr/lib/systemd/system/: システムのデフォルトのUnit設定ファイル /etc/systemd/system: ユーザ独自のUnit設定ファイル。優先はこっち systemctlコマンド一覧 systemdを操作するためのクライアント。
+systemctl start &lt;Unit&gt;: ユニット起動 systemctl stop &lt;Unit&gt;: ユニット停止 systemctl restart &lt;Unit&gt;: ユニット再起動 systemctl reload &lt;Unit&gt;: ユニット systemctl status &lt;Unit&gt;: ユニットの状態確認 systemctl enable &lt;Unit&gt;: 自動起動の有効化 systemctl disable &lt;Unit&gt;: 自動起動の無効化 systemctl is-enabled &lt;Unit&gt;: 自動起動設定の確認 systemctl list-unit-files --type=&lt;type&gt;: ユニット一覧の表示 systemctl daemon-reload: ユニット設定ファイルの再読み込み systemdのログ systemdによって起動させられたUnitのログは/var/log/journal以下に バイナリ形式で保存される。">
+  <meta property="og:locale" content="ja_jp">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-10T12:57:03+09:00">
+    <meta property="article:modified_time" content="2025-05-10T12:57:03+09:00">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="Server">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Linux学習記録">
+  <meta name="twitter:description" content="ディレクトリ構造 /: ルートディレクトリの事で、システムの最上位のディレクトリ。 ~: ホームディレクトリのことで、ログインしたユーザのトップディレクトリ。 /etc: 設定ファイル系が格納される /var: システムなどのログや生成データが格納される Mac(unix) uuidgen: UUIDを生成できる pbcopy/pbpaste: クリップボードに保存・貼り付けができる。echo &#34;Hello,World.&#34; | pbcopy systemd systemd概要 Linuxにおいて起動処理やシステム全体の管理を行うデーモンプロセス。
+カーネルが生成する最初のユーザプロセス
+PID=1が割り当てられる systemd起動の流れ
+BIOS/UEFI -&gt; ブートローダ -&gt; カーネル -&gt; init/systemd GRUB2によってHDDからメモリへカーネルがロードされる カーネルはH/Wを認識できるようになった後systemdを起動する systemdはUnitという単位でシステム起動処理を行う
+従来(init/upstart)との違い
+init/upstartでは、シェルスクリプトによって起動プロセスが順番に実行されていた /etc/rc.d配下のスクリプトが実施 systemdの場合、スクリプト方式は廃止。 これまでのスクリプトの仕事は全てUnitとして定義された systemdはUnitを直接起動させる init/upstartと違い、順番ではなく並列的に実行されるようになった Unitの特徴
+スクリプトではなく設定ファイルに記述 Unit間の依存・順序関係(並列処理)の定義 Unitは役割によっていくつかの種類がある target, mount, service, device, socketなど systemd起動時、default.targetというUnitを頂点として、依存関係のツリーが構築される Unitの定義ファイルの場所
+/usr/lib/systemd/system/: システムのデフォルトのUnit設定ファイル /etc/systemd/system: ユーザ独自のUnit設定ファイル。優先はこっち systemctlコマンド一覧 systemdを操作するためのクライアント。
+systemctl start &lt;Unit&gt;: ユニット起動 systemctl stop &lt;Unit&gt;: ユニット停止 systemctl restart &lt;Unit&gt;: ユニット再起動 systemctl reload &lt;Unit&gt;: ユニット systemctl status &lt;Unit&gt;: ユニットの状態確認 systemctl enable &lt;Unit&gt;: 自動起動の有効化 systemctl disable &lt;Unit&gt;: 自動起動の無効化 systemctl is-enabled &lt;Unit&gt;: 自動起動設定の確認 systemctl list-unit-files --type=&lt;type&gt;: ユニット一覧の表示 systemctl daemon-reload: ユニット設定ファイルの再読み込み systemdのログ systemdによって起動させられたUnitのログは/var/log/journal以下に バイナリ形式で保存される。">
+
+  <link rel="canonical" href="https://moriT958.github.io/myblog/posts/linux/" />
 </head>
 <body
     class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
@@ -178,7 +224,7 @@ systemdによって起動させられたUnitのログは/var/log/journal以下�
   <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
     <a
       class="-translate-y-[1px] text-2xl font-medium"
-      href="http://localhost:1313/"
+      href="https://moriT958.github.io/myblog/"
       >morita&#39;s blog</a
     >
     <div
@@ -243,11 +289,11 @@ systemdによって起動させられたUnitのログは/var/log/journal以下�
       class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
     ><a
         class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
+        href="/myblog/about/"
         >About</a
       ><a
         class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/contact/"
+        href="/myblog/contact/"
         >Contact</a
       ></nav><nav
       class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
@@ -269,7 +315,7 @@ systemdによって起動させられたUnitのログは/var/log/journal以下�
       <a
         class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
         style="--url: url(./rss.svg)"
-        href="http://localhost:1313/index.xml"
+        href="https://moriT958.github.io/myblog/index.xml"
         target="_blank"
         rel="alternate"
       >rss</a>
@@ -378,17 +424,17 @@ systemdによって起動させられたUnitのログは/var/log/journal以下�
 
   <footer class="mt-12 flex flex-wrap"><a
       class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/linux"
+      href="https://moriT958.github.io/myblog/tags/linux"
       >linux</a
     ><a
       class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/server"
+      href="https://moriT958.github.io/myblog/tags/server"
       >server</a
     ></footer></article></main><footer
   class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
 >
   <div class="mr-auto">&copy;2025
-    <a class="link" href="http://localhost:1313/">morita&#39;s blog</a></div>
+    <a class="link" href="https://moriT958.github.io/myblog/">morita&#39;s blog</a></div>
   <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
     >powered by hugo️️</a
   >️

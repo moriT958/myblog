@@ -11,7 +11,7 @@
   style="--bg:#f8f5d7"
   lang="ja-jp"
   dir="ltr"
-><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+><head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -80,14 +80,14 @@ exit: デバッグ終了
 help &lt;cmd&gt;: デバッグコマンドのヘルプ表示
 
 " />
-  <meta name="author" content="Kohei Morita" /><link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+  <meta name="author" content="Kohei Morita" /><link rel="preload stylesheet" as="style" href="https://moriT958.github.io/myblog/main.min.css" />
 
   
-  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+  <link rel="preload" as="image" href="https://moriT958.github.io/myblog/theme.png" />
 
   <link rel="preload" as="image" href="https://pbs.twimg.com/profile_images/1815956684168441856/xfRCsBBh_400x400.jpg" />
 
-  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" /><link rel="preload" as="image" href="http://localhost:1313/github.svg" /><link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  <link rel="preload" as="image" href="https://moriT958.github.io/myblog/twitter.svg" /><link rel="preload" as="image" href="https://moriT958.github.io/myblog/github.svg" /><link rel="preload" as="image" href="https://moriT958.github.io/myblog/rss.svg" />
 
   <link
   rel="stylesheet"
@@ -125,14 +125,86 @@ help &lt;cmd&gt;: デバッグコマンドのヘルプ表示
   
   <link
     rel="icon"
-    href="http://localhost:1313/favicon.ico"
+    href="https://moriT958.github.io/myblog/favicon.ico"
   />
   <link
     rel="apple-touch-icon"
-    href="http://localhost:1313/apple-touch-icon.png"
+    href="https://moriT958.github.io/myblog/apple-touch-icon.png"
   />
 
   <meta name="generator" content="Hugo 0.147.2">
+  <meta itemprop="name" content="GoデバッガDelveの使い方">
+  <meta itemprop="description" content="GoのデバッガDelveの使い方メモ
+基本コマンド dlv help: ヘルプ表示
+dlv debug &lt;pkg&gt;: デバッグの開始
+funcs [&lt;regex&gt;]: 関数一覧の表示
+break &lt;package&gt;.&lt;func&gt;:[line]: ブレークポイントを設定。
+continue: ブレークポイントまで実行
+next: 1行実行
+print &lt;val&gt;: 変数の値を表示
+locals: ローカル変数一覧を表示
+set &lt;val&gt;: 変数の値を上書き
+list: 現在位置のソースコードを表示
+step: 関数内にステップイン
+stack: スタック(バックトレース)の表示
+frame &lt;m&gt;: フレームをセット
+frame &lt;m&gt; &lt;cmd&gt;: スタックトレース上の指定のフレーム上でデバッグコマンドを実行
+stepout: 関数を抜ける
+exit: デバッグ終了
+help &lt;cmd&gt;: デバッグコマンドのヘルプ表示">
+  <meta itemprop="datePublished" content="2025-05-10T12:46:35+09:00">
+  <meta itemprop="dateModified" content="2025-05-10T12:46:35+09:00">
+  <meta itemprop="wordCount" content="47">
+  <meta itemprop="keywords" content="Cli"><meta property="og:url" content="https://moriT958.github.io/myblog/posts/delve/">
+  <meta property="og:site_name" content="morita&#39;s blog">
+  <meta property="og:title" content="GoデバッガDelveの使い方">
+  <meta property="og:description" content="GoのデバッガDelveの使い方メモ
+基本コマンド dlv help: ヘルプ表示
+dlv debug &lt;pkg&gt;: デバッグの開始
+funcs [&lt;regex&gt;]: 関数一覧の表示
+break &lt;package&gt;.&lt;func&gt;:[line]: ブレークポイントを設定。
+continue: ブレークポイントまで実行
+next: 1行実行
+print &lt;val&gt;: 変数の値を表示
+locals: ローカル変数一覧を表示
+set &lt;val&gt;: 変数の値を上書き
+list: 現在位置のソースコードを表示
+step: 関数内にステップイン
+stack: スタック(バックトレース)の表示
+frame &lt;m&gt;: フレームをセット
+frame &lt;m&gt; &lt;cmd&gt;: スタックトレース上の指定のフレーム上でデバッグコマンドを実行
+stepout: 関数を抜ける
+exit: デバッグ終了
+help &lt;cmd&gt;: デバッグコマンドのヘルプ表示">
+  <meta property="og:locale" content="ja_jp">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-10T12:46:35+09:00">
+    <meta property="article:modified_time" content="2025-05-10T12:46:35+09:00">
+    <meta property="article:tag" content="Cli">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="GoデバッガDelveの使い方">
+  <meta name="twitter:description" content="GoのデバッガDelveの使い方メモ
+基本コマンド dlv help: ヘルプ表示
+dlv debug &lt;pkg&gt;: デバッグの開始
+funcs [&lt;regex&gt;]: 関数一覧の表示
+break &lt;package&gt;.&lt;func&gt;:[line]: ブレークポイントを設定。
+continue: ブレークポイントまで実行
+next: 1行実行
+print &lt;val&gt;: 変数の値を表示
+locals: ローカル変数一覧を表示
+set &lt;val&gt;: 変数の値を上書き
+list: 現在位置のソースコードを表示
+step: 関数内にステップイン
+stack: スタック(バックトレース)の表示
+frame &lt;m&gt;: フレームをセット
+frame &lt;m&gt; &lt;cmd&gt;: スタックトレース上の指定のフレーム上でデバッグコマンドを実行
+stepout: 関数を抜ける
+exit: デバッグ終了
+help &lt;cmd&gt;: デバッグコマンドのヘルプ表示">
+
+  <link rel="canonical" href="https://moriT958.github.io/myblog/posts/delve/" />
 </head>
 <body
     class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
@@ -142,7 +214,7 @@ help &lt;cmd&gt;: デバッグコマンドのヘルプ表示
   <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
     <a
       class="-translate-y-[1px] text-2xl font-medium"
-      href="http://localhost:1313/"
+      href="https://moriT958.github.io/myblog/"
       >morita&#39;s blog</a
     >
     <div
@@ -207,11 +279,11 @@ help &lt;cmd&gt;: デバッグコマンドのヘルプ表示
       class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
     ><a
         class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
+        href="/myblog/about/"
         >About</a
       ><a
         class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/contact/"
+        href="/myblog/contact/"
         >Contact</a
       ></nav><nav
       class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
@@ -233,7 +305,7 @@ help &lt;cmd&gt;: デバッグコマンドのヘルプ表示
       <a
         class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
         style="--url: url(./rss.svg)"
-        href="http://localhost:1313/index.xml"
+        href="https://moriT958.github.io/myblog/index.xml"
         target="_blank"
         rel="alternate"
       >rss</a>
@@ -305,13 +377,13 @@ help &lt;cmd&gt;: デバッグコマンドのヘルプ表示
 
   <footer class="mt-12 flex flex-wrap"><a
       class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="http://localhost:1313/tags/cli"
+      href="https://moriT958.github.io/myblog/tags/cli"
       >cli</a
     ></footer></article></main><footer
   class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
 >
   <div class="mr-auto">&copy;2025
-    <a class="link" href="http://localhost:1313/">morita&#39;s blog</a></div>
+    <a class="link" href="https://moriT958.github.io/myblog/">morita&#39;s blog</a></div>
   <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
     >powered by hugo️️</a
   >️
