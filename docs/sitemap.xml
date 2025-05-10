@@ -2,53 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://moriT958.github.io/myblog/posts/lua/</loc>
+    <loc>http://localhost:1313/myblog/posts/lua/</loc>
     <lastmod>2025-05-10T13:08:15+09:00</lastmod>
   </url><url>
-    <loc>https://moriT958.github.io/myblog/</loc>
+    <loc>http://localhost:1313/myblog/</loc>
     <lastmod>2025-05-10T13:08:15+09:00</lastmod>
   </url><url>
-    <loc>https://moriT958.github.io/myblog/posts/</loc>
+    <loc>http://localhost:1313/myblog/posts/</loc>
     <lastmod>2025-05-10T13:08:15+09:00</lastmod>
   </url><url>
-    <loc>https://moriT958.github.io/myblog/tags/programming/</loc>
+    <loc>http://localhost:1313/myblog/tags/programming/</loc>
     <lastmod>2025-05-10T13:08:15+09:00</lastmod>
   </url><url>
-    <loc>https://moriT958.github.io/myblog/tags/</loc>
+    <loc>http://localhost:1313/myblog/tags/</loc>
     <lastmod>2025-05-10T13:08:15+09:00</lastmod>
   </url><url>
-    <loc>https://moriT958.github.io/myblog/tags/linux/</loc>
+    <loc>http://localhost:1313/myblog/tags/linux/</loc>
     <lastmod>2025-05-10T12:57:03+09:00</lastmod>
   </url><url>
-    <loc>https://moriT958.github.io/myblog/posts/linux/</loc>
+    <loc>http://localhost:1313/myblog/posts/linux/</loc>
     <lastmod>2025-05-10T12:57:03+09:00</lastmod>
   </url><url>
-    <loc>https://moriT958.github.io/myblog/tags/server/</loc>
+    <loc>http://localhost:1313/myblog/tags/server/</loc>
     <lastmod>2025-05-10T12:57:03+09:00</lastmod>
   </url><url>
-    <loc>https://moriT958.github.io/myblog/posts/elm/</loc>
+    <loc>http://localhost:1313/myblog/posts/elm/</loc>
     <lastmod>2025-05-10T12:52:08+09:00</lastmod>
   </url><url>
-    <loc>https://moriT958.github.io/myblog/tags/cli/</loc>
+    <loc>http://localhost:1313/myblog/tags/cli/</loc>
     <lastmod>2025-05-10T12:50:24+09:00</lastmod>
   </url><url>
-    <loc>https://moriT958.github.io/myblog/posts/docker/</loc>
+    <loc>http://localhost:1313/myblog/posts/docker/</loc>
     <lastmod>2025-05-10T12:50:24+09:00</lastmod>
   </url><url>
-    <loc>https://moriT958.github.io/myblog/posts/delve/</loc>
+    <loc>http://localhost:1313/myblog/posts/delve/</loc>
     <lastmod>2025-05-10T12:46:35+09:00</lastmod>
   </url><url>
-    <loc>https://moriT958.github.io/myblog/posts/neovim/</loc>
+    <loc>http://localhost:1313/myblog/posts/neovim/</loc>
     <lastmod>2025-05-10T12:44:43+09:00</lastmod>
   </url><url>
-    <loc>https://moriT958.github.io/myblog/contact/</loc>
+    <loc>http://localhost:1313/myblog/contact/</loc>
     <lastmod>2025-05-10T12:04:26+09:00</lastmod>
   </url><url>
-    <loc>https://moriT958.github.io/myblog/about/</loc>
+    <loc>http://localhost:1313/myblog/about/</loc>
     <lastmod>2025-05-10T11:48:09+09:00</lastmod>
   </url><url>
-    <loc>https://moriT958.github.io/myblog/categories/</loc>
-  </url><url>
-    <loc>https://moriT958.github.io/myblog/series/</loc>
+    <loc>http://localhost:1313/myblog/categories/</loc>
   </url>
 </urlset>

@@ -7,10 +7,9 @@ theme = 'paper'
 [pagination]
 pagerSize = 5
 
-[taxonomies]
-category = "categories"
-tag = "tags"
-series = "series"
+[module]
+[[module.imports]]
+path = "github.com/nanxiaobei/hugo-paper"
 
 [menu]
 [[menu.main]]
