@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cli on morita&#39;s blog</title>
-    <link>http://localhost:1313/myblog/tags/cli/</link>
+    <link>https://moriT958.github.io/myblog/tags/cli/</link>
     <description>Recent content in Cli on morita&#39;s blog</description>
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sat, 10 May 2025 12:50:24 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/myblog/tags/cli/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://moriT958.github.io/myblog/tags/cli/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>よく使うDockerコマンド</title>
-      <link>http://localhost:1313/myblog/posts/docker/</link>
+      <link>https://moriT958.github.io/myblog/posts/docker/</link>
       <pubDate>Sat, 10 May 2025 12:50:24 +0900</pubDate>
-      <guid>http://localhost:1313/myblog/posts/docker/</guid>
+      <guid>https://moriT958.github.io/myblog/posts/docker/</guid>
       <description>&lt;p&gt;コマンド忘れがちなのでメモ残しときます&lt;/p&gt;&#xA;&lt;h2 id=&#34;コマンドまとめ&#34;&gt;コマンドまとめ&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;docker container run [option] &amp;lt;image&amp;gt; [command]&lt;/code&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;--rm&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;--interactive&lt;/code&gt;, &lt;code&gt;-i&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;--tty&lt;/code&gt;, &lt;code&gt;-t&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;--detach&lt;/code&gt;, &lt;code&gt;-d&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;--name &amp;lt;name&amp;gt;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;--env &amp;quot;&amp;lt;key&amp;gt;=&amp;lt;value&amp;gt;&amp;quot;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;--env-file &amp;lt;file&amp;gt;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;--publish &amp;lt;hostport&amp;gt;:&amp;lt;containerport&amp;gt;&lt;/code&gt;, &lt;code&gt;-p&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;--platform&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;--volume &amp;lt;name&amp;gt;:&amp;lt;target&amp;gt;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;--mount type=&amp;lt;bind|mount&amp;gt;,src=&amp;lt;name&amp;gt;,dst=&amp;lt;target&amp;gt;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;--network &amp;lt;network&amp;gt;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;--network-alias&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;docker container ls [option]&lt;/code&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;--all&lt;/code&gt;, &lt;code&gt;-a&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;docker container stop [option] &amp;lt;container&amp;gt;&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;docker container rm [option] &amp;lt;container&amp;gt;&lt;/code&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;--force&lt;/code&gt;, &lt;code&gt;-f&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;docker container exec [option] &amp;lt;container&amp;gt; command&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;docker image ls [option]&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;docker image pull [option] &amp;lt;image&amp;gt;&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;docker image build [option] &amp;lt;path&amp;gt;&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>GoデバッガDelveの使い方</title>
-      <link>http://localhost:1313/myblog/posts/delve/</link>
+      <link>https://moriT958.github.io/myblog/posts/delve/</link>
       <pubDate>Sat, 10 May 2025 12:46:35 +0900</pubDate>
-      <guid>http://localhost:1313/myblog/posts/delve/</guid>
+      <guid>https://moriT958.github.io/myblog/posts/delve/</guid>
       <description>&lt;p&gt;GoのデバッガDelveの使い方メモ&lt;/p&gt;&#xA;&lt;h2 id=&#34;基本コマンド&#34;&gt;基本コマンド&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;dlv help&lt;/code&gt;: ヘルプ表示&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;dlv debug &amp;lt;pkg&amp;gt;&lt;/code&gt;: デバッグの開始&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;funcs [&amp;lt;regex&amp;gt;]&lt;/code&gt;: 関数一覧の表示&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;break &amp;lt;package&amp;gt;.&amp;lt;func&amp;gt;:[line]&lt;/code&gt;: ブレークポイントを設定。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;continue&lt;/code&gt;: ブレークポイントまで実行&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;next&lt;/code&gt;: 1行実行&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;print &amp;lt;val&amp;gt;&lt;/code&gt;: 変数の値を表示&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;locals&lt;/code&gt;: ローカル変数一覧を表示&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;set &amp;lt;val&amp;gt;&lt;/code&gt;: 変数の値を上書き&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;list&lt;/code&gt;: 現在位置のソースコードを表示&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;step&lt;/code&gt;: 関数内にステップイン&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;stack&lt;/code&gt;: スタック(バックトレース)の表示&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;frame &amp;lt;m&amp;gt;&lt;/code&gt;: フレームをセット&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;frame &amp;lt;m&amp;gt; &amp;lt;cmd&amp;gt;&lt;/code&gt;: スタックトレース上の指定のフレーム上でデバッグコマンドを実行&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;stepout&lt;/code&gt;: 関数を抜ける&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;exit&lt;/code&gt;: デバッグ終了&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;help &amp;lt;cmd&amp;gt;&lt;/code&gt;: デバッグコマンドのヘルプ表示&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
   </channel>

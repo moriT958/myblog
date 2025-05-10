@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on morita&#39;s blog</title>
-    <link>http://localhost:1313/myblog/tags/</link>
+    <link>https://moriT958.github.io/myblog/tags/</link>
     <description>Recent content in Tags on morita&#39;s blog</description>
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sat, 10 May 2025 13:08:15 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/myblog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://moriT958.github.io/myblog/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Programming</title>
-      <link>http://localhost:1313/myblog/tags/programming/</link>
+      <link>https://moriT958.github.io/myblog/tags/programming/</link>
       <pubDate>Sat, 10 May 2025 13:08:15 +0900</pubDate>
-      <guid>http://localhost:1313/myblog/tags/programming/</guid>
+      <guid>https://moriT958.github.io/myblog/tags/programming/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>http://localhost:1313/myblog/tags/linux/</link>
+      <link>https://moriT958.github.io/myblog/tags/linux/</link>
       <pubDate>Sat, 10 May 2025 12:57:03 +0900</pubDate>
-      <guid>http://localhost:1313/myblog/tags/linux/</guid>
+      <guid>https://moriT958.github.io/myblog/tags/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>Server</title>
-      <link>http://localhost:1313/myblog/tags/server/</link>
+      <link>https://moriT958.github.io/myblog/tags/server/</link>
       <pubDate>Sat, 10 May 2025 12:57:03 +0900</pubDate>
-      <guid>http://localhost:1313/myblog/tags/server/</guid>
+      <guid>https://moriT958.github.io/myblog/tags/server/</guid>
       <description></description>
     </item>
     <item>
       <title>Cli</title>
-      <link>http://localhost:1313/myblog/tags/cli/</link>
+      <link>https://moriT958.github.io/myblog/tags/cli/</link>
       <pubDate>Sat, 10 May 2025 12:50:24 +0900</pubDate>
-      <guid>http://localhost:1313/myblog/tags/cli/</guid>
+      <guid>https://moriT958.github.io/myblog/tags/cli/</guid>
       <description></description>
     </item>
   </channel>

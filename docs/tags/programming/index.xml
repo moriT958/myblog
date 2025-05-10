@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Programming on morita&#39;s blog</title>
-    <link>http://localhost:1313/myblog/tags/programming/</link>
+    <link>https://moriT958.github.io/myblog/tags/programming/</link>
     <description>Recent content in Programming on morita&#39;s blog</description>
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <lastBuildDate>Sat, 10 May 2025 13:08:15 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/myblog/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://moriT958.github.io/myblog/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lua基本文法まとめ</title>
-      <link>http://localhost:1313/myblog/posts/lua/</link>
+      <link>https://moriT958.github.io/myblog/posts/lua/</link>
       <pubDate>Sat, 10 May 2025 13:08:15 +0900</pubDate>
-      <guid>http://localhost:1313/myblog/posts/lua/</guid>
+      <guid>https://moriT958.github.io/myblog/posts/lua/</guid>
       <description>&lt;p&gt;Neovimなどの設定記述言語として使われているLua言語の基本文法&lt;/p&gt;&#xA;&lt;h2 id=&#34;文字列&#34;&gt;文字列&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;文字列の結合は&lt;code&gt;..&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;[[string]]&lt;/code&gt;はエスケープ&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;string.format()&lt;/code&gt;でpythonのfstringのように文字列が作れる&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;変数&#34;&gt;変数&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Luaの変数は基本的にグローバル&lt;/li&gt;&#xA;&lt;li&gt;型は指定しないが存在はする(動的型付け)&lt;/li&gt;&#xA;&lt;li&gt;型の種類&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;nil&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;boolean&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;number&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;string&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;function&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;userdata&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;thread&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;table&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;演算&#34;&gt;演算&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;四則演算&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;+&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;-&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;*&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;/&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;%&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;比較演算&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;&amp;lt;, &amp;gt;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;&amp;lt;=, &amp;gt;=&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;==, ~=&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;論理演算&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;and&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;or&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;not&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;io&#34;&gt;I/O&lt;/h2&gt;&#xA;&lt;p&gt;&lt;code&gt;io.write()&lt;/code&gt;: 標準出力への書き出し&#xA;&lt;code&gt;io.read()&lt;/code&gt;: 標準入力からの読み込み&lt;/p&gt;&#xA;&lt;h2 id=&#34;制御文&#34;&gt;制御文&lt;/h2&gt;&#xA;&lt;h3 id=&#34;if文&#34;&gt;if文&lt;/h3&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-:&#34; data-lang=&#34;:&#34;&gt;if(exp) then&#xA;  ...&#xA;elseif(exp) then&#xA;  ...&#xA;else&#xA;  ...&#xA;end&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;while文&#34;&gt;while文&lt;/h3&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-:lua&#34; data-lang=&#34;:lua&#34;&gt;while (exp) do&#xA;  ...&#xA;end&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;for文&#34;&gt;for文&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Numeric for&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-:lua&#34; data-lang=&#34;:lua&#34;&gt;for init, end, inc do&#xA;  ...&#xA;end&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;&#xA;&lt;li&gt;Generic for&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;repeat文&#34;&gt;repeat文&lt;/h3&gt;&#xA;&lt;p&gt;まず&amp;hellip;の処理が実行される&lt;/p&gt;</description>
     </item>
   </channel>
