@@ -1,0 +1,404 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg:#f8f5d7"
+  lang="ja-jp"
+  dir="ltr"
+><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Linux学習記録 - morita&#39;s blog</title>
+
+  
+  <meta name="theme-color" />
+
+  <meta name="description" content="ディレクトリ構造
+
+/: ルートディレクトリの事で、システムの最上位のディレクトリ。
+~: ホームディレクトリのことで、ログインしたユーザのトップディレクトリ。
+/etc: 設定ファイル系が格納される
+/var: システムなどのログや生成データが格納される
+
+Mac(unix)
+
+uuidgen: UUIDを生成できる
+pbcopy/pbpaste: クリップボードに保存・貼り付けができる。echo &quot;Hello,World.&quot; | pbcopy
+
+systemd
+systemd概要
+Linuxにおいて起動処理やシステム全体の管理を行うデーモンプロセス。
+
+
+カーネルが生成する最初のユーザプロセス
+
+PID=1が割り当てられる
+
+
+
+systemd起動の流れ
+
+BIOS/UEFI -&gt; ブートローダ -&gt; カーネル -&gt; init/systemd
+
+GRUB2によってHDDからメモリへカーネルがロードされる
+カーネルはH/Wを認識できるようになった後systemdを起動する
+
+
+
+
+
+systemdはUnitという単位でシステム起動処理を行う
+
+
+従来(init/upstart)との違い
+
+init/upstartでは、シェルスクリプトによって起動プロセスが順番に実行されていた
+
+/etc/rc.d配下のスクリプトが実施
+
+
+systemdの場合、スクリプト方式は廃止。
+
+これまでのスクリプトの仕事は全てUnitとして定義された
+systemdはUnitを直接起動させる
+init/upstartと違い、順番ではなく並列的に実行されるようになった
+
+
+
+
+
+Unitの特徴
+
+スクリプトではなく設定ファイルに記述
+Unit間の依存・順序関係(並列処理)の定義
+Unitは役割によっていくつかの種類がある
+
+target, mount, service, device, socketなど
+
+
+systemd起動時、default.targetというUnitを頂点として、依存関係のツリーが構築される
+
+
+
+Unitの定義ファイルの場所
+
+/usr/lib/systemd/system/: システムのデフォルトのUnit設定ファイル
+/etc/systemd/system: ユーザ独自のUnit設定ファイル。優先はこっち
+
+
+
+systemctlコマンド一覧
+systemdを操作するためのクライアント。
+
+systemctl start &lt;Unit&gt;: ユニット起動
+systemctl stop &lt;Unit&gt;: ユニット停止
+systemctl restart &lt;Unit&gt;: ユニット再起動
+systemctl reload &lt;Unit&gt;: ユニット
+systemctl status &lt;Unit&gt;: ユニットの状態確認
+systemctl enable &lt;Unit&gt;: 自動起動の有効化
+systemctl disable &lt;Unit&gt;: 自動起動の無効化
+systemctl is-enabled &lt;Unit&gt;: 自動起動設定の確認
+systemctl list-unit-files --type=&lt;type&gt;: ユニット一覧の表示
+systemctl daemon-reload: ユニット設定ファイルの再読み込み
+
+systemdのログ
+systemdによって起動させられたUnitのログは/var/log/journal以下に
+バイナリ形式で保存される。" />
+  <meta name="author" content="Kohei Morita" /><link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  <link rel="preload" as="image" href="https://pbs.twimg.com/profile_images/1815956684168441856/xfRCsBBh_400x400.jpg" />
+
+  <link rel="preload" as="image" href="http://localhost:1313/twitter.svg" /><link rel="preload" as="image" href="http://localhost:1313/github.svg" /><link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+></script><script>
+  document.addEventListener('DOMContentLoaded', () =>
+    renderMathInElement(document.body, {
+      
+      
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      
+      throwOnError: false,
+    }),
+  );
+</script>
+
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.147.2">
+</head>
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="http://localhost:1313/"
+      >morita&#39;s blog</a
+    >
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#f8f5d7'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
+  ><nav
+      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
+    ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/contact/"
+        >Contact</a
+      ></nav><nav
+      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
+    >
+      <a
+        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/@morita_kagshm"
+        target="_blank"
+        rel="me"
+      >twitter</a>
+      <a
+        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/moriT958"
+        target="_blank"
+        rel="me"
+      >github</a>
+      <a
+        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./rss.svg)"
+        href="http://localhost:1313/index.xml"
+        target="_blank"
+        rel="alternate"
+      >rss</a>
+    </nav>
+  </div>
+</header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">Linux学習記録</h1><div class="text-xs antialiased opacity-60"><time>May 10, 2025</time></div></header>
+
+  <section><h2 id="ディレクトリ構造">ディレクトリ構造</h2>
+<ul>
+<li><code>/</code>: ルートディレクトリの事で、システムの最上位のディレクトリ。</li>
+<li><code>~</code>: ホームディレクトリのことで、ログインしたユーザのトップディレクトリ。</li>
+<li><code>/etc</code>: 設定ファイル系が格納される</li>
+<li><code>/var</code>: システムなどのログや生成データが格納される</li>
+</ul>
+<h2 id="macunix">Mac(unix)</h2>
+<ul>
+<li><code>uuidgen</code>: UUIDを生成できる</li>
+<li><code>pbcopy/pbpaste</code>: クリップボードに保存・貼り付けができる。<code>echo &quot;Hello,World.&quot; | pbcopy</code></li>
+</ul>
+<h2 id="systemd">systemd</h2>
+<h3 id="systemd概要">systemd概要</h3>
+<p>Linuxにおいて起動処理やシステム全体の管理を行うデーモンプロセス。</p>
+<ul>
+<li>
+<p>カーネルが生成する最初のユーザプロセス</p>
+<ul>
+<li>PID=1が割り当てられる</li>
+</ul>
+</li>
+<li>
+<p>systemd起動の流れ</p>
+<ul>
+<li>BIOS/UEFI -&gt; ブートローダ -&gt; カーネル -&gt; init/systemd
+<ul>
+<li>GRUB2によってHDDからメモリへカーネルがロードされる</li>
+<li>カーネルはH/Wを認識できるようになった後systemdを起動する</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>systemdはUnitという単位でシステム起動処理を行う</p>
+</li>
+<li>
+<p>従来(init/upstart)との違い</p>
+<ul>
+<li>init/upstartでは、シェルスクリプトによって起動プロセスが順番に実行されていた
+<ul>
+<li><code>/etc/rc.d</code>配下のスクリプトが実施</li>
+</ul>
+</li>
+<li>systemdの場合、スクリプト方式は廃止。
+<ul>
+<li>これまでのスクリプトの仕事は全てUnitとして定義された</li>
+<li>systemdはUnitを直接起動させる</li>
+<li>init/upstartと違い、順番ではなく並列的に実行されるようになった</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Unitの特徴</p>
+<ul>
+<li>スクリプトではなく設定ファイルに記述</li>
+<li>Unit間の依存・順序関係(並列処理)の定義</li>
+<li>Unitは役割によっていくつかの種類がある
+<ul>
+<li>target, mount, service, device, socketなど</li>
+</ul>
+</li>
+<li>systemd起動時、default.targetというUnitを頂点として、依存関係のツリーが構築される</li>
+</ul>
+</li>
+<li>
+<p>Unitの定義ファイルの場所</p>
+<ul>
+<li><code>/usr/lib/systemd/system/</code>: システムのデフォルトのUnit設定ファイル</li>
+<li><code>/etc/systemd/system</code>: ユーザ独自のUnit設定ファイル。優先はこっち</li>
+</ul>
+</li>
+</ul>
+<h3 id="systemctlコマンド一覧">systemctlコマンド一覧</h3>
+<p>systemdを操作するためのクライアント。</p>
+<ul>
+<li><code>systemctl start &lt;Unit&gt;</code>: ユニット起動</li>
+<li><code>systemctl stop &lt;Unit&gt;</code>: ユニット停止</li>
+<li><code>systemctl restart &lt;Unit&gt;</code>: ユニット再起動</li>
+<li><code>systemctl reload &lt;Unit&gt;</code>: ユニット</li>
+<li><code>systemctl status &lt;Unit&gt;</code>: ユニットの状態確認</li>
+<li><code>systemctl enable &lt;Unit&gt;</code>: 自動起動の有効化</li>
+<li><code>systemctl disable &lt;Unit&gt;</code>: 自動起動の無効化</li>
+<li><code>systemctl is-enabled &lt;Unit&gt;</code>: 自動起動設定の確認</li>
+<li><code>systemctl list-unit-files --type=&lt;type&gt;</code>: ユニット一覧の表示</li>
+<li><code>systemctl daemon-reload</code>: ユニット設定ファイルの再読み込み</li>
+</ul>
+<h3 id="systemdのログ">systemdのログ</h3>
+<p>systemdによって起動させられたUnitのログは<code>/var/log/journal</code>以下に
+バイナリ形式で保存される。</p>
+<p><code>journalctl -f -u &lt;Unit&gt;</code>: ユニットのログを監視</p>
+</section>
+
+  <footer class="mt-12 flex flex-wrap"><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/linux"
+      >linux</a
+    ><a
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/server"
+      >server</a
+    ></footer></article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2025
+    <a class="link" href="http://localhost:1313/">morita&#39;s blog</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+</html>

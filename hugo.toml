@@ -1,0 +1,48 @@
+baseURL = 'https://example.org/'
+languageCode = 'ja-jp'
+title = "morita's blog"
+theme = 'paper'
+
+[pagination]
+pagerSize = 5
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+[menu]
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 10
+[[menu.main]]
+identifier = "contact"
+name = "Contact"
+url = "/contact/"
+weight = 10
+[[menu.footer]]
+
+[params]
+# color style
+color = 'wheat' # linen, wheat, gray, light
+
+# header social icons
+twitter = '@morita_kagshm'
+github = 'moriT958'
+rss = true                 # show rss icon
+
+# home page profile
+avatar = 'https://pbs.twimg.com/profile_images/1815956684168441856/xfRCsBBh_400x400.jpg'
+name = 'Kohei Morita'
+bio = 'Kagoshima, Japan🌋'
+
+# misc
+disableHLJS = true                      # disable highlight.js
+disablePostNavigation = true            # disable post navigation
+monoDarkIcon = false                    # show monochrome dark mode icon
+math = true                             # enable KaTeX math typesetting globally
+localKatex = false                      # use local KaTeX js/css instead of CDN
+favicon = "favicon.ico"                 # customize the default favicon
+appleTouchIcon = "apple-touch-icon.png" # customize the default Apple touch icon
