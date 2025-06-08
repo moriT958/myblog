@@ -5,18 +5,23 @@ title: "About"
 
 I am a student from Kagoshima Japan🌋! Currently 22 years old.
 
-## 😊 Interests
+## 😊 興味分野
 
-- Web (サーバーサイド)
+- Web開発(サーバーサイド)
 - Linux
 - Terminal Tools
-- Neovim
 
 ## ⚙️ Tech Stack
 
 - Go
 - (少しだけ) C, Python, HTML/CSS, Javascript
-- (勉強中) Typescript, React
 - MySQL, PostgreSQL, sqlite
 - Docker
 - GNU Make
+- (勉強中) Typescript, React
+
+## 🐹 My Favs
+
+- Neovim
+- [Bubble Tea](https://github.com/charmbracelet/bubbletea)
+- [Catppuccin](https://catppuccin.com/)
