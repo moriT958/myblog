@@ -3,21 +3,23 @@
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
+/* Catppuccin Latte (Light mode) */
 :root,
 html[data-theme="light"] {
-  --background: #fdfdfd;
-  --foreground: #282728;
-  --accent: #006cac;
-  --muted: #e6e6e6;
-  --border: #ece9e9;
+  --background: #eff1f5;
+  --foreground: #4c4f69;
+  --accent: #8839ef;
+  --muted: #ccd0da;
+  --border: #ea76cb;
 }
 
+/* Catppuccin Frappé (Dark mode) */
 html[data-theme="dark"] {
-  --background: #212737;
-  --foreground: #eaedf3;
-  --accent: #ff6b01;
-  --muted: #343f60bf;
-  --border: #ab4b08;
+  --background: #303446;
+  --foreground: #c6d0f5;
+  --accent: #ca9ee6;
+  --muted: #414559;
+  --border: #f4b8e4;
 }
 
 @theme inline {
