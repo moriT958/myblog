@@ -3,8 +3,6 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-I am a student from Kagoshima Japan🌋! Currently 22 years old.
-
 ## 😊 興味分野
 
 - Web開発(サーバーサイド)
@@ -13,12 +11,10 @@ I am a student from Kagoshima Japan🌋! Currently 22 years old.
 
 ## ⚙️ Tech Stack
 
-- Go
-- (少しだけ) C, Python, HTML/CSS, Javascript
+- Go, Typescript
 - MySQL, PostgreSQL, sqlite
 - Docker
 - GNU Make
-- (勉強中) Typescript, React
 
 ## 🐹 My Favs
 

@@ -1,5 +1,5 @@
 export const SITE = {
-  website: "https://astro-paper.pages.dev/", // replace this with your deployed domain
+  website: "https://morit958.netlify.app/", // replace this with your deployed domain
   author: "Morita",
   profile: "",
   desc: "my tech blog thing.",
@@ -13,10 +13,10 @@ export const SITE = {
   showBackButton: true, // show back button in post detail
   editPost: {
     enabled: true,
-    text: "Suggest Changes",
-    url: "https://github.com/satnaing/astro-paper/edit/main/",
+    text: "修正を提案する",
+    url: "https://github.com/moriT958/myblog/edit/main/",
   },
   dynamicOgImage: true,
   lang: "ja", // html lang code. Set this empty and default will be "en"
-  timezone: "Asia/Bangkok", // Default global timezone (IANA format) https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  timezone: "Asia/Tokyo", // Default global timezone (IANA format) https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 } as const;
