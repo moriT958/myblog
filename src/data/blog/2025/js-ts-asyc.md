@@ -260,3 +260,42 @@ incNums(nums).then((result: number[]) => {
 // [ 1, 2, 3, 4, 5 ]
 // [ 2, 3, 4, 5, 6 ]
 ```
+
+## setTimeoutを応用した定期実行
+
+setTimeoutを使用することで定期実行を行う処理を実現することができる。
+
+setIntervalではなく、setTimeoutを使うことで安全に定期実行を行うことができる。
+
+setIntervalは一定時間間隔でタスクキューにタスクを積むため、前のタスクに時間がかかってしまっても、
+止めない限りお構いなしにタスクを積んでいってしまう。そのためキューが詰まってしまうバグに繋がる。
+
+一方で、setTimeoutを使用した場合、タスクの実行を待ってから、次のタスクを積むと言った具合に、
+柔軟なスケジューリングが実装できる。
+
+以下は、指定した回数分コンソールに数字を出力する処理をsetTimeoutで実装した。
+(この程度の処理ならsetIntervalでもキューが詰まることはなさそうだが)
+コメントを記している箇所で、万が一時間のかかる処理が合ったとしても、その実行を待ってからタスクを積むため、
+キューが詰まるリスクを回避することができる。
+
+```ts
+const count = (num: number): void => {
+  let count = 0;
+  let timer: ReturnType<typeof setTimeout>;
+
+  const timerFunc = () => {
+    if (count >= num) {
+      clearTimeout(timer);
+      return;
+    }
+
+    // 時間がかかる処理
+
+    count++;
+    console.log(count);
+    timer = setTimeout(timerFunc, 1000);
+  };
+
+  timer = setTimeout(timerFunc, 1000);
+};
+```
