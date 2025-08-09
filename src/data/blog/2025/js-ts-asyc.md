@@ -11,7 +11,9 @@ tags:
 description: JavaScript・TypeScriptにおける非同期処理を学んだ。その内容を自分用にまとめた。
 ---
 
-JavaScript・TypeScriptにおける非同期処理を学んだので、その内容を見返す用にまとめました。
+JavaScript/TypeScriptにおける非同期処理を完全に理解したので、見返すようにまとめました。
+
+(内容指摘・修正提案大歓迎です)
 
 ## Table of contents
 
