@@ -22,8 +22,6 @@ Unmarshal内では、大まかに以下の流れで処理が行われている�
 - `d.unmarshal()`でパース処理のメイン部分を行なっている
   - ここの部分を深ぼって読んでいく
 
-**KeyWord: decodeStateオブジェクト**
-
 ## decodeState構造体
 
 ```go
@@ -40,4 +38,6 @@ type decodeState struct {
 }
 ```
 
-`decodeState.unmarshal(v any) error`
+- [ ] `decodeState.unmarshal(v any) error`を読み解く
+
+※ `decodeState.scan`の挙動も少し気になった
