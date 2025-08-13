@@ -2,7 +2,7 @@
 author: もーりー
 pubDatetime: 2025-08-09T23:14:16.663+09:00
 title: (備忘録)JavaScriptにおける非同期処理を学んだ
-slug: about javascript and typescript asynchronous
+slug: about-javascript-asynchronous
 featured: true
 draft: false
 tags:
