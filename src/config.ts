@@ -2,8 +2,8 @@ export const SITE = {
   website: "https://morit958.com", // replace this with your deployed domain
   author: "Morita",
   profile: "",
-  desc: "my tech blog thing.",
-  title: "morita's blog",
+  desc: "my tech blog things.",
+  title: "blog morit958",
   ogImage: "my-icon-image.jpg",
   lightAndDarkMode: true,
   postPerIndex: 5,
