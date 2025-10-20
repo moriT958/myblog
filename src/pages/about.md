@@ -3,21 +3,14 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-## 😊 興味分野
+## 👦🏻 Profile
 
-- Web開発(サーバーサイド)
-- Linux
-- Terminal Tools
+- 森田 航平 (22)
 
-## ⚙️ Tech Stack
+- 🏫 鹿児島大学大学院 在学中 (M1)
 
-- Go, Typescript
-- MySQL, PostgreSQL, sqlite
-- Docker
-- GNU Make
+  - 情報科学専攻
 
-## 🐹 My Favs
+- 興味: Web
 
-- Neovim
-- [Bubble Tea](https://github.com/charmbracelet/bubbletea)
-- [Catppuccin](https://catppuccin.com/)
+- 使用言語: Go, TypeScript (個人開発・バイトで使用)
